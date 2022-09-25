@@ -34,13 +34,13 @@ $(function () {
     $('.portfolio-item').magnificPopup({
         delegate: 'a',
         type: 'image',
-        gallery:{enabled:true}
+        gallery: {enabled: true}
     });
 
     $(".car-magnify-gallery").lightGallery();
 
     $(document).on('click', '.compare-btn', function () {
-        if($(this).hasClass('active')){
+        if ($(this).hasClass('active')) {
             $(this).removeClass('active');
             $.jnoty("Car has been removed from compare list", {
                 header: 'Warning',
@@ -61,7 +61,7 @@ $(function () {
     });
 
     $(document).on('click', '.wishlist-btn', function () {
-        if($(this).hasClass('active')){
+        if ($(this).hasClass('active')) {
             $(this).removeClass('active');
             $.jnoty("Car has been removed from wishlist list", {
                 header: 'Warning',
@@ -102,35 +102,32 @@ $(function () {
     function adjustHeader()
     {
         var windowWidth = $(window).width();
-        if(windowWidth > 0) {
+        if (windowWidth > 0) {
             if ($(document).scrollTop() >= 100) {
-                if($('.header-shrink').length < 1) {
+                if ($('.header-shrink').length < 1) {
                     $('.sticky-header').addClass('header-shrink');
                 }
-                if($('.do-sticky').length < 1) {
-                    $('.company-logo img').attr('src', 'img/logos/black-logo.png');
+                if ($('.do-sticky').length < 1) {
+                    $('.company-logo img').attr('src', '../static/img/logos/black-logo.png');
                 }
-            }
-            else {
+            } else {
                 $('.sticky-header').removeClass('header-shrink');
-                if($('.do-sticky').length < 1 && $('.fixed-header').length == 0 && $('.fixed-header2').length == 0) {
-                    $('.company-logo img').attr('src', 'img/logos/logo.png');
+                if ($('.do-sticky').length < 1 && $('.fixed-header').length == 0 && $('.fixed-header2').length == 0) {
+                    $('.company-logo img').attr('src', '../static/img/logos/logo.png');
                 } else {
-                    $('.company-logo img').attr('src', 'img/logos/black-logo.png');
+                    $('.company-logo img').attr('src', '../static/img/logos/black-logo.png');
                 }
             }
         } else {
-            $('.company-logo img').attr('src', 'img/logos/black-logo.png');
+            $('.company-logo img').attr('src', '../static/img/logos/black-logo.png');
         }
     }
 
-    function doSticky()
-    {
+    function doSticky() {
         if ($(document).scrollTop() > 40) {
             $('.do-sticky').addClass('sticky-header');
             //$('.do-sticky').addClass('header-shrink');
-        }
-        else {
+        } else {
             $('.do-sticky').removeClass('sticky-header');
             //$('.do-sticky').removeClass('header-shrink');
         }
@@ -225,26 +222,26 @@ $(function () {
 
 
     // Countdown activation
-    $( function() {
+    $(function () {
         // Add background image
         //$.backstretch('../img/nature.jpg');
         var endDate = "December  27, 2019 15:03:25";
-        $('.countdown.simple').countdown({ date: endDate });
+        $('.countdown.simple').countdown({date: endDate});
         $('.countdown.styled').countdown({
             date: endDate,
-            render: function(data) {
+            render: function (data) {
                 $(this.el).html("<div>" + this.leadingZeros(data.days, 3) + " <span>Days</span></div><div>" + this.leadingZeros(data.hours, 2) + " <span>Hours</span></div><div>" + this.leadingZeros(data.min, 2) + " <span>Minutes</span></div><div>" + this.leadingZeros(data.sec, 2) + " <span>Seconds</span></div>");
             }
         });
         $('.countdown.callback').countdown({
             date: +(new Date) + 10000,
-            render: function(data) {
+            render: function (data) {
                 $(this.el).text(this.leadingZeros(data.sec, 2) + " sec");
             },
-            onEnd: function() {
+            onEnd: function () {
                 $(this.el).addClass('ended');
             }
-        }).on("click", function() {
+        }).on("click", function () {
             $(this).removeClass('ended').data('countdown').update(+(new Date) + 10000).start();
         });
 
@@ -260,8 +257,8 @@ $(function () {
         $(this).append("" +
             "<span class='min-value'></span> " +
             "<span class='max-value'></span>" +
-            "<input class='current-min' type='hidden' name='"+minName+"'>" +
-            "<input class='current-max' type='hidden' name='"+maxName+"'>"
+            "<input class='current-min' type='hidden' name='" + minName + "'>" +
+            "<input class='current-max' type='hidden' name='" + maxName + "'>"
         );
         $(this).slider({
             range: true,
@@ -272,7 +269,7 @@ $(function () {
                 event = event;
                 var currentMin = parseInt(ui.values[0], 10);
                 var currentMax = parseInt(ui.values[1], 10);
-                $(this).children(".min-value").text( currentMin + " " + unit);
+                $(this).children(".min-value").text(currentMin + " " + unit);
                 $(this).children(".max-value").text(currentMax + " " + unit);
                 $(this).children(".current-min").val(currentMin);
                 $(this).children(".current-max").val(currentMax);
@@ -281,7 +278,7 @@ $(function () {
 
         var currentMin = parseInt($(this).slider("values", 0), 10);
         var currentMax = parseInt($(this).slider("values", 1), 10);
-        $(this).children(".min-value").text( currentMin + " " + unit);
+        $(this).children(".min-value").text(currentMin + " " + unit);
         $(this).children(".max-value").text(currentMax + " " + unit);
         $(this).children(".current-min").val(currentMin);
         $(this).children(".current-max").val(currentMax);
@@ -350,7 +347,7 @@ $(function () {
     });
 
     // Dropdown activation
-    $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+    $('.dropdown-menu a.dropdown-toggle').on('click', function (e) {
         if (!$(this).next().hasClass('show')) {
             $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
         }
@@ -358,7 +355,7 @@ $(function () {
         $subMenu.toggleClass('show');
 
 
-        $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+        $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
             $('.dropdown-submenu .show').removeClass("show");
         });
 
@@ -368,13 +365,13 @@ $(function () {
 
     // Full  Page Search Activation
     $(function () {
-        $('a[href="#full-page-search"]').on('click', function(event) {
+        $('a[href="#full-page-search"]').on('click', function (event) {
             event.preventDefault();
             $('#full-page-search').addClass('open');
             $('#full-page-search > form > input[type="search"]').focus();
         });
 
-        $('#full-page-search, #full-page-search button.close').on('click keyup', function(event) {
+        $('#full-page-search, #full-page-search button.close').on('click keyup', function (event) {
             if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
                 $(this).removeClass('open');
             }
@@ -392,7 +389,7 @@ $(function () {
             centerMode: true,
             centerPadding: '0'
         });
-        
+
         $(this).closest('.slick-slider-area').find('.slick-prev').on("click", function () {
             slider.slick('slickPrev');
         });
@@ -402,11 +399,10 @@ $(function () {
     });
 
 
-    $(".dropdown.btns .dropdown-toggle").on('click', function() {
+    $(".dropdown.btns .dropdown-toggle").on('click', function () {
         $(this).dropdown("toggle");
         return false;
     });
-
 
 
     // Dropzone initialization
@@ -454,6 +450,7 @@ $(function () {
             '</div>';
         $('body').append(plateStings);
     }
+
     $(document).on('click', '.color-plate', function () {
         var name = $(this).attr('data-color');
         $('link[id="style_sheet"]').attr('href', 'css/skins/' + name + '.css');
