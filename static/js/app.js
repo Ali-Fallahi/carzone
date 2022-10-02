@@ -99,8 +99,7 @@ $(function () {
         placedDashboard();
     });
 
-    function adjustHeader()
-    {
+    function adjustHeader() {
         var windowWidth = $(window).width();
         if (windowWidth > 0) {
             if ($(document).scrollTop() >= 100) {
@@ -476,3 +475,7 @@ $(function () {
         }
     }).trigger("resize");
 })(jQuery);
+
+setTimeout(function () {
+    $('#message').fadeOut('slow');
+}, 4000)
