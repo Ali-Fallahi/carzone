@@ -1,5 +1,18 @@
 # Carzone Details And Images
 Carzone is a dynamic web application built using Django, offering users a seamless car shopping experience. With Carzone, users can easily register an account, browse through a wide selection of cars, and apply various filters to find the perfect match. Once they've found a car they are interested in, they can use the integrated popup messaging system to inquire about specific details or request more information.
+## 🔹Key Features:
+#### User Registration:
+Easily sign up and create an account on Carzone to access personalized features.
+#### Car Filtering:
+Find your dream car quickly by applying filters such as make, model, year, price range, and more.
+#### Car Detail Page:
+Get detailed information about each car, including specifications, images, and contact options.
+#### Popup Messaging:
+Use the convenient popup messaging feature to send direct inquiries to car sellers.
+#### Email Notifications:
+Receive email notifications for new messages or updates on your inquiries.
+#### User Dashboard:
+Manage your messages and keep track of your car shopping progress in a user-friendly dashboard.
 ## 🔹Home
 ![carzone_home](https://github.com/Ali-Fallahi/carzone/assets/101938082/0c4f6efb-f030-40d0-815a-78536e27b32b)
 ## 🔹Register
